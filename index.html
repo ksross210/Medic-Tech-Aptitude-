@@ -1109,12 +1109,12 @@ body {
   </div><!-- /survey-form -->
 
   <!-- SUBMISSION CONFIRMATION OVERLAY -->
-  <div id="submit-overlay" hidden style="position:fixed;inset:0;z-index:999;background:#034966;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;text-align:center;">
+  <div id="submit-overlay" style="display:none;position:fixed;inset:0;z-index:999;background:#034966;flex-direction:column;align-items:center;justify-content:center;padding:32px;text-align:center;">
     <div style="font-size:96px;line-height:1;margin-bottom:24px;">✓</div>
     <div style="font-family:'Barlow Condensed',Arial,sans-serif;font-size:42px;font-weight:700;color:#fff;letter-spacing:0.04em;margin-bottom:12px;">Survey Submitted</div>
     <div style="font-size:18px;color:rgba(255,255,255,0.85);max-width:480px;line-height:1.6;margin-bottom:32px;">Your responses have been recorded. Thank you for completing the DTC Medic Survey.</div>
     <div id="overlay-status" style="font-size:15px;color:rgba(255,255,255,0.7);margin-bottom:32px;min-height:24px;"></div>
-    <button onclick="document.getElementById('submit-overlay').hidden=true;document.getElementById('result-screen').hidden=false;" style="background:#fff;color:#034966;border:none;padding:14px 36px;font-family:'Barlow Condensed',Arial,sans-serif;font-size:17px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">View Full Results</button>
+    <button onclick="document.getElementById('submit-overlay').style.display='none';document.getElementById('result-screen').hidden=false;" style="background:#fff;color:#034966;border:none;padding:14px 36px;font-family:'Barlow Condensed',Arial,sans-serif;font-size:17px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">View Full Results</button>
   </div>
 
   <!-- RESULT SCREEN -->
@@ -1448,7 +1448,7 @@ body {
     };
     // show full-screen confirmation immediately
     document.getElementById('survey-form').hidden = true;
-    document.getElementById('submit-overlay').hidden = false;
+    document.getElementById('submit-overlay').style.display = 'flex';
     window.scrollTo({top: 0, behavior: 'smooth'});
     document.getElementById('progress-bar').style.width = '100%';
     document.getElementById('progress-label').textContent = 'Complete';
